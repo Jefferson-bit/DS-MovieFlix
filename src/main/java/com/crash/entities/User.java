@@ -1,15 +1,42 @@
 package com.crash.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public class User implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_user")
+public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String email;
 	private String password;
-
+	
+	@ManyToMany
+	@JoinTable(name = "tb_user_role",
+	joinColumns = @JoinColumn(name = "user_id"),
+	inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles = new HashSet<>();
+	
+	@OneToMany(mappedBy = "user")
+	private List<Review> reviews = new ArrayList<>();
+	
 	public User() {
 	}
 
@@ -52,6 +79,14 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public List<Review> getReviews() {
+		return reviews;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -76,5 +111,4 @@ public class User implements Serializable{
 			return false;
 		return true;
 	}
-
 }
