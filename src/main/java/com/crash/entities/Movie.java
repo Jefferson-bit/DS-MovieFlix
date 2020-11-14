@@ -16,9 +16,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_movie")
-public class Movie implements Serializable{
+public class Movie implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -28,18 +28,18 @@ public class Movie implements Serializable{
 	private String imgUri;
 	@Column(columnDefinition = "TEXT")
 	private String synopsis;
-	
+
 	@OneToMany(mappedBy = "movie")
 	private List<Review> reviews = new ArrayList<>();
-	
+
 	@ManyToOne
 	@JoinColumn(name = "genre_id")
 	private Genre genre;
-	
+
 	public Movie() {
 	}
 
-	public Movie(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis,Genre genre) {
+	public Movie(Long id, String title, String subTitle, Integer year, String imgUri, String synopsis, Genre genre) {
 		this.id = id;
 		this.title = title;
 		this.subTitle = subTitle;
@@ -96,7 +96,7 @@ public class Movie implements Serializable{
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
 	}
-	
+
 	public List<Review> getReviews() {
 		return reviews;
 	}
