@@ -22,7 +22,6 @@ public class GenreDTO implements Serializable {
 		id = entity.getId();
 		name = entity.getName();
 		movies = entity.getMovies().stream().map(x -> new MovieDTO(x)).collect(Collectors.toList());
-		
 	}
 
 	public Long getId() {

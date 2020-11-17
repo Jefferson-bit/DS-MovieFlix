@@ -2,12 +2,15 @@ package com.crash.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+
 import com.crash.entities.Review;
 
 public class ReviewDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long id;
+	@NotBlank(message = "Campo não pode ser vazio")
 	private String text;
 	private Long userId;
 

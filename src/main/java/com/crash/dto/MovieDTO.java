@@ -32,11 +32,6 @@ public class MovieDTO implements Serializable {
 		this.synopsis = synopsis;
 	}
 
-	public MovieDTO(Movie entity, List<Review> rev)  {
-		this(entity);
-		rev.forEach(x -> this.reviews.add(new ReviewDTO(x)));
-	}
-
 	public MovieDTO(Movie entity) {
 		id = entity.getId();
 		title = entity.getTitle();
@@ -45,6 +40,11 @@ public class MovieDTO implements Serializable {
 		imgUri = entity.getImgUri();
 		synopsis = entity.getSynopsis();
 	}
+	
+	public MovieDTO(Movie entity, List<Review> rev)  {
+		this(entity);
+		rev.forEach(x -> this.reviews.add(new ReviewDTO(x)));
+	} 
 	
 	public Long getId() {
 		return id;
