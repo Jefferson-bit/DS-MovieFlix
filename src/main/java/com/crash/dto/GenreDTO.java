@@ -3,9 +3,9 @@ package com.crash.dto;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import com.crash.entities.Genre;
+import com.crash.entities.Movie;
 
 public class GenreDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -17,12 +17,17 @@ public class GenreDTO implements Serializable {
 
 	public GenreDTO() {
 	}
-
+	
+	public GenreDTO(Genre entity, List<Movie> movie)  {
+		this(entity);
+		movie.forEach(mov -> this.movies.add(new MovieDTO(mov)));
+	}
+	
 	public GenreDTO(Genre entity) {
 		id = entity.getId();
 		name = entity.getName();
-		movies = entity.getMovies().stream().map(x -> new MovieDTO(x)).collect(Collectors.toList());
 	}
+	
 
 	public Long getId() {
 		return id;

@@ -1,5 +1,6 @@
 package com.crash.services;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,10 @@ public class GenreService {
 	public Page<GenreDTO> findAllPaged(PageRequest pageRequest, String name){
 		Page<Genre> page = repository.searchForGenre(name, pageRequest);
 		repository.findGenresMovie(page.stream().collect(Collectors.toList()));
-		return page.map(x -> new GenreDTO(x));
+		return page.map(x -> new GenreDTO(x, x.getMovies()));
 	}	
 	
+	public List<Genre> findAll(){
+		return repository.findAll();
+	}
 }
