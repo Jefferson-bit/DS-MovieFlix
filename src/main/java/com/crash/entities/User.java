@@ -85,11 +85,10 @@ public class User implements Serializable, UserDetails{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 	public Set<Role> getRoles() {
 		return roles;
 	}
-
 	public List<Review> getReviews() {
 		return reviews;
 	}
@@ -129,7 +128,7 @@ public class User implements Serializable, UserDetails{
 	public String getUsername() {
 		return email;
 	}
-
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		return true;
