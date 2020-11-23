@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.crash.entities.User;
 import com.crash.repositories.UserRepository;
+import com.crash.services.exceptions.UnauthorizedException;
 
 @Service
 public class AuthService {
@@ -20,7 +21,7 @@ public class AuthService {
 			String username = SecurityContextHolder.getContext().getAuthentication().getName();
 			return userRepository.findByEmail(username);
 		} catch (Exception e) {
-			throw new RuntimeException("Error");
+			throw new UnauthorizedException("Unauthorized");
 		}
 	}
 }

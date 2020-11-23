@@ -48,8 +48,6 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		TokenEnhancerChain chain = new TokenEnhancerChain();
-		chain.setTokenEnhancers(Arrays.asList(accessTokenConverter, tokenEnhancer));
 		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
 	}
 
