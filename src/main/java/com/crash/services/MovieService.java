@@ -27,8 +27,8 @@ public class MovieService {
 	}
 	
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findAllPaged(PageRequest pageRequest){
-		Page<Movie> page = repository.findAll(pageRequest);
+	public Page<MovieDTO> findAllPaged(String name, PageRequest pageRequest){
+		Page<Movie> page = repository.find(name, pageRequest);
 		return page.map(x -> new MovieDTO(x));
 	}
 }
