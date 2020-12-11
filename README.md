@@ -1,18 +1,35 @@
+# Movie Flix
+[![NPM](https://img.shields.io/apm/l/react)](https://github.com/Jefferson-bit/DS-MovieFlix/blob/main/LICENSE)
+
 # Sobre o Projeto:
 
-O Projeto é um sistema que fornece aos usuarios fazerem avaliações de seus filmes preferidos. Você pode fazer uma analise do seu filme predileto,
+O Projeto é um sistema que fornece aos usuarios fazerem avaliações e busca de seus filmes preferidos. Você pode fazer uma analise do seu filme predileto,
 Buscar por gênero e deixar seu feedback sobre o mesmo. Também disponibilizamos perfis como visitante e membro. Caso queira deixar algum comentário
 sobre o filme, precisa ter o perfil de Membro, mas caso queira somente ler algumas sinopse ou ver opiniões sobre o filme, você pode logar
 como visitante no nosso site. 
 
-# Tecnologias Utilizada:
+![Modelo Conceitual](https://snipboard.io/D2wyB9.jpg)
 
- * Java 11
- * Spring boot
- * Maven 
- * OAuth 2.0
- * Banco de dados H2
- * JPA
+## Tecnologias Utilizada:
+
+# Back End
+   * Java 
+   * Spring boot
+   * Maven 
+   * OAuth 2.0
+   * Banco de dados H2
+   * Swagger
+   * JPA/Hibernate
  
- # Aviso
- Caso queira testar o projeto na sua maquina, basta clonar ele.
+ ## Executar o Projeto
+ Pré-Requisitos: Java 11
+ ```bash
+  # Clone o Projeto
+  git clone https://github.com/Jefferson-bit/DS-MovieFlix.git
+  
+ ```
+
+ ## Autor
+ Jefferson Santos Oliveira
+ 
+ Linkedin: https://www.linkedin.com/in/jefferson-oliveira-9048b11b0/
