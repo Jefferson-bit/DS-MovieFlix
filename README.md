@@ -27,9 +27,11 @@ como visitante no nosso site.
   # Clone o Projeto
   git clone https://github.com/Jefferson-bit/DS-MovieFlix.git
   
-  # Abra o projeto na sua IDE (Estou utilizando STS)
+  # Entre na pasta do projeto
   
-  # Clique com o botão direito na classe DSMovieApplication.java e va em Run as Spring Boot App
+  # Executar o projeto
+  ./mvnw spring-boot:run
+
   
  ```
 
