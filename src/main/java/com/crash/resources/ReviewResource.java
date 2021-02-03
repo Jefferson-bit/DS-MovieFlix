@@ -17,7 +17,7 @@ import com.crash.services.ReviewService;
 
 @RestController
 @RequestMapping(value = "/reviews")
-public class ReviewResource {
+public class ReviewResource implements Comparable<ReviewResource> {
 
 	@Autowired
 	private ReviewService service;
@@ -29,4 +29,9 @@ public class ReviewResource {
 		return ResponseEntity.created(uri).body(dto);
 	}
 
+	@Override
+	public int compareTo(ReviewResource o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

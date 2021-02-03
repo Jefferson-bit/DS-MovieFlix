@@ -33,7 +33,7 @@ public class ResourceHandlerException {
 
 	@ExceptionHandler(ForbiddenException.class)
 	public ResponseEntity<OauthException> forbidden(ForbiddenException ex, HttpServletRequest request) {
-		OauthException oauth = new OauthException("Access  denied", ex.getMessage());
+		OauthException oauth = new OauthException("Access denied", ex.getMessage());
 		return ResponseEntity.status(HttpStatus.FORBIDDEN).body(oauth);
 	}
 
