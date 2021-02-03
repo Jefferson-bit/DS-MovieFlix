@@ -1,5 +1,6 @@
 # Movie Flix
 [![NPM](https://img.shields.io/apm/l/react)](https://github.com/Jefferson-bit/DS-MovieFlix/blob/main/LICENSE)
+[![Build Status](https://travis-ci.org/dwyl/learn-travis.svg?branch=master)](https://travis-ci.org/dwyl/learn-travis)
 
 # Sobre o Projeto:
 
