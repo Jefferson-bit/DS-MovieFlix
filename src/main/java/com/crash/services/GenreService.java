@@ -23,7 +23,7 @@ public class GenreService {
 	public Page<GenreDTO> findAllPaged(PageRequest pageRequest, String name){
 		Page<Genre> page = repository.searchForGenre(name, pageRequest);
 		repository.findGenresMovie(page.stream().collect(Collectors.toList()));
-		return page.map(x -> new GenreDTO(x, x.getMovies()));
+		return page.map(obj -> new GenreDTO(obj, obj.getMovies()));
 	}	
 	
 	public List<Genre> findAll(){
