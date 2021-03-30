@@ -77,9 +77,5 @@ public class MovieResourceTests {
 				.accept(MediaType.APPLICATION_JSON));
 				result.andExpect(status().isNotFound());
 	}
-	
-	
-	
-	
-	
+		
 }

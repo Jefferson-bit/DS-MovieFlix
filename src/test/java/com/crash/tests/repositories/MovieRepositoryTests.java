@@ -21,7 +21,6 @@ public class MovieRepositoryTests {
 	private long countTotalProduct;
 	private PageRequest pageRequest;
 
-	
 	@BeforeEach
 	void setUp() throws Exception {
 		totalElement = 3;

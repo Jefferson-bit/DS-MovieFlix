@@ -11,7 +11,7 @@ import com.crash.entities.Movie;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long>{
 	
-	@Query("SELECT obj FROM Movie obj WHERE :name = '' OR obj.genre.name = :name")
+	@Query("SELECT obj FROM Movie obj WHERE :name = '' ")
 	Page<Movie> find(String name, Pageable pageable);
 	
 }
